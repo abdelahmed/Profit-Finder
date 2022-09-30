@@ -9,11 +9,13 @@ a list of all items, ranking them by total profit. This will help the user decid
 to do with their business. It is of interest to me because in the future, I would like to
 start a business, and I believe this app would be very helpful.
 
-## A subtitle
+## User Stories
 
-A *bulleted* list:
-- item 1
-- item 2
-- item 3
+**User Stories**:
+- As a user, I want to be able to add an item to my list of items
+- As a user, I want to be able to compare profit for different items
+- As a user, I want to be able to view profit for a specific item
+- As a user, I want to be able to delete an item from my list of items
+- As a user, I want to be able to change the cost and price of an item 
 
 An example of text with **bold** and *italic* fonts.  
