@@ -17,5 +17,3 @@ start a business, and I believe this app would be very helpful.
 - As a user, I want to be able to view profit for a specific item
 - As a user, I want to be able to delete an item from my list of items
 - As a user, I want to be able to change the cost and price of an item 
-
-An example of text with **bold** and *italic* fonts.  
