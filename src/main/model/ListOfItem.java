@@ -8,23 +8,32 @@ public class ListOfItem {
     private ArrayList<Item> itemList;
 
     public ListOfItem() {
-        itemList = new ArrayList<>();
         itemCount = 0;
+        itemList = new ArrayList<>();
     }
 
     public void addItem(Item newItem) {
         itemList.add(newItem);
+        itemCount += 1;
     }
 
     public void removeItem(Item removedItem) {
-        for (Item i: itemList) {
-            if (i == removedItem) {
-                itemList.remove(i);
-            }
-        }
+        itemList.remove(removedItem);
+        itemCount -= 1;
     }
 
+    public ArrayList<Item> getListOfItems() {
+        return itemList;
+    }
 
-
-
+    public int getItemCount() {
+        return itemCount;
+    }
 }
+
+
+
+
+
+
+

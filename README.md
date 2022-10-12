@@ -14,6 +14,6 @@ start a business, and I believe this app would be very helpful.
 **User Stories**:
 - As a user, I want to be able to add an item to my list of items
 - As a user, I want to be able to compare profit for different items
-- As a user, I want to be able to view profit for a specific item
+- As a user, I want to be able to find out the profit for a specific item
 - As a user, I want to be able to remove an item from my list of items
-- As a user, I want to be able to change the cost and price of an item 
+- As a user, I want to be able to change the cost and/or price of an item 
