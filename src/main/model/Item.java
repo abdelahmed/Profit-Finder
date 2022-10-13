@@ -56,4 +56,31 @@ public class Item {
         }
 
     }
+
+    public void changeSales(int newSales) {
+        if (newSales < 0) {
+            sales = sales;
+        } else {
+            sales = newSales;
+        }
+    }
+
+    public void changeBuys(int newBuys) {
+        if (newBuys < 0) {
+            buys = buys;
+        } else {
+            buys = newBuys;
+        }
+    }
+
+    public void changeName(String newName) {
+        name = newName;
+    }
 }
+
+
+
+
+
+
+

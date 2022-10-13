@@ -18,8 +18,18 @@ public class ListOfItem {
     }
 
     public void removeItem(Item removedItem) {
-        itemList.remove(removedItem);
-        itemCount -= 1;
+        if (itemList.contains(removedItem)) {
+            itemList.remove(removedItem);
+            itemCount -= 1;
+        }
+    }
+
+    public ArrayList<String> getItemNames() {
+        ArrayList<String> nameList = new ArrayList<String>();
+        for (Item i: itemList) {
+            nameList.add(i.getName());
+        }
+        return nameList;
     }
 
     public ArrayList<Item> getListOfItems() {

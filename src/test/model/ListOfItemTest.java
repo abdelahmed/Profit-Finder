@@ -37,7 +37,6 @@ public class ListOfItemTest {
     public void addItemTest() {
         testList1.addItem(item1);
         assertEquals(testList1.getListOfItems().get(0), item1);
-
         testList1.addItem(item2);
         testList1.addItem(item3);
         assertEquals(testList1.getListOfItems().get(2), item3);
@@ -70,21 +69,31 @@ public class ListOfItemTest {
         assertEquals(testList1.getItemCount(), 3);
         testList1.removeItem(item2);
         assertEquals(testList1.getItemCount(), 2);
+        testList1.removeItem(item2);
+        assertEquals(testList1.getItemCount(), 2);
         testList1.removeItem(item1);
         testList1.removeItem(item3);
         assertEquals(testList1.getItemCount(), 0);
 
+    }
 
-
-
-
+    @Test
+    public void testGetItemNames() {
+        ArrayList<String> testList3 = new ArrayList<String>();
+        assertEquals(testList1.getItemNames(), testList3);
+        testList3.add("apple");
+        testList1.addItem(item1);
+        assertEquals(testList1.getItemNames(), testList3);
 
 
 
 
 
     }
-}
+
+
+
+    }
 
 
 

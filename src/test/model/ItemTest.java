@@ -76,5 +76,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
      }
 
+     @Test
+     public void testGetProfit() {
+         assertEquals(orange.getProfit(), -20);
+     }
+
 
  }
