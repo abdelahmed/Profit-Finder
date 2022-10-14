@@ -2,8 +2,6 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
  class ItemTest {
@@ -79,6 +77,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
      @Test
      public void testGetProfit() {
          assertEquals(orange.getProfit(), -20);
+     }
+
+     @Test
+     public void testChangeName() {
+         orange.changeName("apple");
+         assertEquals(orange.getName(), "apple");
+         orange.changeName("banana");
+         orange.changeName("pineapple");
+         assertEquals(orange.getName(), "pineapple");
+
+
+     }
+
+     @Test
+     public void testChangeSales() {
+         orange.changeSales(3);
+         assertEquals(orange.getSales(), 3);
+         orange.changeSales(34);
+         orange.changeSales(35);
+         assertEquals(orange.getSales(), 35);
+
      }
 
 

@@ -2,19 +2,14 @@ package model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
-import java.util.Collection;
 
 public class ListOfItemTest {
 
     private ListOfItem testList1;
-    private ListOfItem testList2;
     private Item item1;
     private Item item2;
     private Item item3;
@@ -26,7 +21,6 @@ public class ListOfItemTest {
     public void setup() {
 
         testList1 = new ListOfItem();
-        testList2 = new ListOfItem();
         item1 = new Item("apple", 3, 5, 10, 10);
         item2 = new Item("banana", 2, 10, 10, 30);
         item3 = new Item("guava", 1, 3, 20, 30);
@@ -79,7 +73,7 @@ public class ListOfItemTest {
 
     @Test
     public void testGetItemNames() {
-        ArrayList<String> testList3 = new ArrayList<String>();
+        ArrayList<String> testList3 = new ArrayList<>();
         assertEquals(testList1.getItemNames(), testList3);
         testList3.add("apple");
         testList1.addItem(item1);

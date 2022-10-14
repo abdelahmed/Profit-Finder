@@ -5,35 +5,35 @@ import java.util.ArrayList;
 
 public class ListOfItem {
     private int itemCount;
-    private ArrayList<Item> itemList;
+    private final ArrayList<Item> items;
 
     public ListOfItem() {
         itemCount = 0;
-        itemList = new ArrayList<>();
+        items = new ArrayList<>();
     }
 
     public void addItem(Item newItem) {
-        itemList.add(newItem);
+        items.add(newItem);
         itemCount += 1;
     }
 
     public void removeItem(Item removedItem) {
-        if (itemList.contains(removedItem)) {
-            itemList.remove(removedItem);
+        if (items.contains(removedItem)) {
+            items.remove(removedItem);
             itemCount -= 1;
         }
     }
 
     public ArrayList<String> getItemNames() {
-        ArrayList<String> nameList = new ArrayList<String>();
-        for (Item i: itemList) {
+        ArrayList<String> nameList = new ArrayList<>();
+        for (Item i: items) {
             nameList.add(i.getName());
         }
         return nameList;
     }
 
     public ArrayList<Item> getListOfItems() {
-        return itemList;
+        return items;
     }
 
     public int getItemCount() {

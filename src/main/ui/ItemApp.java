@@ -65,22 +65,22 @@ public class ItemApp {
     }
 
     private void addItem() {
-        System.out.println("Enter Item name!");
+        System.out.println("Enter Item name:");
         String itemName = input.next();
-        System.out.println("Enter the Items Cost!");
-        int itemCost = input.nextInt();
-        System.out.println("Enter the Items Price!");
-        int itemPrice = input.nextInt();
-        System.out.println("Enter the Items Sales!");
-        int itemSales = input.nextInt();
-        System.out.println("Enter the Items Buys!");
-        int itemBuys = input.nextInt();
+        System.out.println("Enter the Items Cost:");
+        double itemCost = input.nextDouble();
+        System.out.println("Enter the Items Price:");
+        double itemPrice = input.nextDouble();
+        System.out.println("Enter the Items Sales:");
+        double itemSales = input.nextDouble();
+        System.out.println("Enter the Items Buys:");
+        double itemBuys = input.nextDouble();
         itemList.addItem(new Item(itemName,
                 itemCost,
                 itemPrice,
                 itemSales,
                 itemBuys));
-        System.out.println((itemName) + " has been added to your list of Items!");
+        System.out.println((itemName) + " has been added to your list of Items:");
 
     }
 
@@ -91,14 +91,14 @@ public class ItemApp {
     }
 
     private void removeItem() {
-        System.out.println("Enter the name of the item you would like to remove!");
+        System.out.println("Enter the name of the item you would like to remove:");
         String itemName = input.next();
 
         if (itemList.getItemNames().contains(itemName)) {
             int n = itemList.getItemNames().indexOf(itemName);
             itemList.getItemNames().remove(n);
             itemList.getListOfItems().remove(n);
-            System.out.println(itemName + " has been removed from your list of items!");
+            System.out.println(itemName + " has been removed from your list of items:");
         } else {
             System.out.println("Sorry, your selection is invalid! Please try again");
         }
@@ -106,7 +106,7 @@ public class ItemApp {
     }
 
     public void analyzeItem() {
-        System.out.println("Enter the name of the item you would like to analyze!");
+        System.out.println("Enter the name of the item you would like to analyze:");
         String itemName = input.next();
         if (itemList.getItemNames().contains(itemName)) {
             int n = itemList.getItemNames().indexOf(itemName);
@@ -119,20 +119,20 @@ public class ItemApp {
             System.out.println("\td -> View Item Details");
             String option = input.next();
             if (option.equals("cc")) {
-                System.out.println("Enter the new cost: ");
-                int newCost = input.nextInt();
+                System.out.println("Enter the new cost $: ");
+                double newCost = input.nextDouble();
                 itemList.getListOfItems().get(n).changeCost(newCost);
             } else if (option.equals("cp")) {
-                System.out.println("Enter the new price: ");
-                int newPrice = input.nextInt();
+                System.out.println("Enter the new price $: ");
+                double newPrice = input.nextDouble();
                 itemList.getListOfItems().get(n).changePrice(newPrice);
             } else if (option.equals("cb")) {
-                System.out.println("Enter the new number of buys: ");
-                int newBuys = input.nextInt();
+                System.out.println("Enter the new number of buys $: ");
+                double newBuys = input.nextDouble();
                 itemList.getListOfItems().get(n).changeBuys(newBuys);
             } else if (option.equals("p")) {
                 System.out.println("The current profit of this item is "
-                        + itemList.getListOfItems().get(n).getProfit());
+                        + itemList.getListOfItems().get(n).getProfit() + "$");
 
             } else if (option.equals("d")) {
                 System.out.println("\nItem Details:");
@@ -150,10 +150,7 @@ public class ItemApp {
         } else {
             System.out.println("Sorry, your selection is invalid! Please try again");
         }
-
-
     }
-
 }
 
 

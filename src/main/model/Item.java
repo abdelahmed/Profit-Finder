@@ -2,13 +2,13 @@ package model;
 
 public class Item {
     private String name;
-    private int cost;
-    private int price;
-    private int sales;
-    private int buys;
+    private double cost;
+    private double price;
+    private double sales;
+    private double buys;
 
 
-    public Item(String name, int cost, int price, int sales, int buys) {
+    public Item(String name, double cost, double price, double sales, double buys) {
         this.name = name;
         this.cost = cost;
         this.price = price;
@@ -20,27 +20,27 @@ public class Item {
         return name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public int getSales() {
+    public double getSales() {
         return sales;
     }
 
-    public int getBuys() {
+    public double getBuys() {
         return buys;
     }
 
-    public int getProfit() {
+    public double getProfit() {
         return (sales * price - cost * buys);
     }
 
-    public void changePrice(int newPrice) {
+    public void changePrice(double newPrice) {
         if (newPrice < 0) {
             price = price;
         } else {
@@ -48,16 +48,15 @@ public class Item {
         }
     }
 
-    public void changeCost(int newCost) {
+    public void changeCost(double newCost) {
         if (newCost < 0) {
             cost = cost;
         } else {
             cost = newCost;
         }
-
     }
 
-    public void changeSales(int newSales) {
+    public void changeSales(double newSales) {
         if (newSales < 0) {
             sales = sales;
         } else {
@@ -65,7 +64,7 @@ public class Item {
         }
     }
 
-    public void changeBuys(int newBuys) {
+    public void changeBuys(double newBuys) {
         if (newBuys < 0) {
             buys = buys;
         } else {
