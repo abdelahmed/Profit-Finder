@@ -15,9 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
          orange = new Item("orange", 5, 5, 6);
          apple = new Item("apple", 3,4,5);
          banana = new Item("apple", 44.85, 4.9, 5);
-
-
-
      }
      @Test
      public void ItemConstructorTest() {
