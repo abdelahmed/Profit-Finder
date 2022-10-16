@@ -6,15 +6,19 @@ import model.ListOfItem;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class ItemApp {
+// Retail application
+public class RetailApp {
     private ListOfItem itemList;
     private Scanner input;
 
-    public ItemApp() {
-        runItem();
+    // EFFECTS: runs the retail application
+    public RetailApp() {
+        runApp();
     }
 
-    public void runItem() {
+    // MODIFIES: this
+    // EFFECTS: processes user input
+    public void runApp() {
         boolean keepGoing = true;
         String command = null;
 
@@ -34,6 +38,7 @@ public class ItemApp {
         }
     }
 
+    // EFFECTS: displays menu of options for user to select
     private void menu() {
         System.out.println("\nWelcome to the Profit Finder!");
         System.out.println("\nSelect from:");
@@ -44,12 +49,16 @@ public class ItemApp {
         System.out.println("\tq -> Quit");
     }
 
+    // MODIFIES: this
+    // EFFECTS: initializes ListOfItems
     private void initialize() {
         itemList = new ListOfItem();
         input = new Scanner(System.in);
         input.useDelimiter("\n");
     }
 
+    // MODIFIES: this
+    // EFFECTS: processes user command
     private void processCommand(String command) {
         if (command.equals("a")) {
             addItem();
@@ -64,32 +73,37 @@ public class ItemApp {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds an item (built by the user) to itemList
     private void addItem() {
         System.out.println("Enter Item name:");
         String itemName = input.next();
-        System.out.println("Enter the Items Cost:");
+        System.out.println("Enter the Items Cost ($):");
         double itemCost = input.nextDouble();
-        System.out.println("Enter the Items Price:");
+        System.out.println("Enter the Items Price ($):");
         double itemPrice = input.nextDouble();
-        System.out.println("Enter the Items Sales:");
+        System.out.println("Enter the Items Sales ($):");
         double itemSales = input.nextDouble();
-        System.out.println("Enter the Items Buys:");
-        double itemBuys = input.nextDouble();
         itemList.addItem(new Item(itemName,
                 itemCost,
                 itemPrice,
-                itemSales,
-                itemBuys));
+                itemSales));
         System.out.println((itemName) + " has been added to your list of Items:");
 
     }
 
+    // EFFECTS: displays names of all items in itemList
     private void viewItems() {
         for (Item i: itemList.getListOfItems()) {
             System.out.println(i.getName());
         }
     }
 
+    /*
+     * MODIFIES: this
+     * EFFECTS: removes an item (chosen by user bases on name input)
+                from itemList
+    */
     private void removeItem() {
         System.out.println("Enter the name of the item you would like to remove:");
         String itemName = input.next();
@@ -105,6 +119,8 @@ public class ItemApp {
 
     }
 
+    // MODIFIES: this
+    // EFFECTS: gives user option to view or make changes to items of their choice
     public void analyzeItem() {
         System.out.println("Enter the name of the item you would like to analyze:");
         String itemName = input.next();
@@ -114,42 +130,32 @@ public class ItemApp {
             System.out.println("\tcc -> Change Item Cost");
             System.out.println("\tcp -> Change Item Price");
             System.out.println("\tcs -> Change Item Sales");
-            System.out.println("\tcb -> Change Item Buys");
-            System.out.println("\tp -> View Items Profit");
             System.out.println("\td -> View Item Details");
-            String option = input.next();
-            if (option.equals("cc")) {
+            if (input.next().equals("cc")) {
                 System.out.println("Enter the new cost $: ");
-                double newCost = input.nextDouble();
-                itemList.getListOfItems().get(n).changeCost(newCost);
-            } else if (option.equals("cp")) {
+                itemList.getListOfItems().get(n).changeCost(input.nextDouble());
+            } else if (input.next().equals("cp")) {
                 System.out.println("Enter the new price $: ");
-                double newPrice = input.nextDouble();
-                itemList.getListOfItems().get(n).changePrice(newPrice);
-            } else if (option.equals("cb")) {
-                System.out.println("Enter the new number of buys $: ");
-                double newBuys = input.nextDouble();
-                itemList.getListOfItems().get(n).changeBuys(newBuys);
-            } else if (option.equals("p")) {
-                System.out.println("The current profit of this item is "
-                        + itemList.getListOfItems().get(n).getProfit() + "$");
-
-            } else if (option.equals("d")) {
-                System.out.println("\nItem Details:");
-                System.out.println("Name: " + itemList.getListOfItems().get(n).getName());
-                System.out.println("Cost: " + itemList.getListOfItems().get(n).getCost());
-                System.out.println("Price: " + itemList.getListOfItems().get(n).getPrice());
-                System.out.println("Buys: " + itemList.getListOfItems().get(n).getBuys());
-                System.out.println("Sales: " + itemList.getListOfItems().get(n).getSales());
-                System.out.println("Profit: " + itemList.getListOfItems().get(n).getProfit());
-
+                itemList.getListOfItems().get(n).changePrice(input.nextDouble());
+            } else if (input.next().equals("d")) {
+                displayItemDetails(n);
             } else {
                 System.out.println("Sorry, your selection is invalid! Please try again");
             }
-
         } else {
             System.out.println("Sorry, your selection is invalid! Please try again");
         }
+    }
+
+    // REQUIRES: n >= 0
+    // EFFECTS: displays details of certain item (n) in itemList
+    public void displayItemDetails(int n) {
+        System.out.println("\nItem Details:");
+        System.out.println("Name: " + itemList.getListOfItems().get(n).getName());
+        System.out.println("Cost: " + itemList.getListOfItems().get(n).getCost());
+        System.out.println("Price: " + itemList.getListOfItems().get(n).getPrice());
+        System.out.println("Sales: " + itemList.getListOfItems().get(n).getSales());
+        System.out.println("Profit: " + itemList.getListOfItems().get(n).getProfit());
     }
 }
 

@@ -21,9 +21,9 @@ public class ListOfItemTest {
     public void setup() {
 
         testList1 = new ListOfItem();
-        item1 = new Item("apple", 3, 5, 10, 10);
-        item2 = new Item("banana", 2, 10, 10, 30);
-        item3 = new Item("guava", 1, 3, 20, 30);
+        item1 = new Item("apple", 3, 5, 10);
+        item2 = new Item("banana", 2, 10, 10);
+        item3 = new Item("guava", 1, 3, 20);
     }
 
 

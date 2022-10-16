@@ -8,11 +8,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
      private Item orange;
      private Item apple;
+     private Item banana;
 
      @BeforeEach
      void setup() {
-         orange = new Item("orange", 5, 5, 6, 10);
-         apple = new Item("apple", 3,4,5,6);
+         orange = new Item("orange", 5, 5, 6);
+         apple = new Item("apple", 3,4,5);
+         banana = new Item("apple", 44.85, 4.9, 5);
+
+
 
      }
      @Test
@@ -25,11 +29,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
     public void testGetName() {
          assertEquals(orange.getName(), "orange");
         }
-
-     @Test
-     public void testGetBuys() {
-         assertEquals(orange.getBuys(), 10);
-     }
 
      @Test
      public void testGetSales() {
@@ -76,7 +75,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
      @Test
      public void testGetProfit() {
-         assertEquals(orange.getProfit(), -20);
+         assertEquals(orange.getProfit(), 25);
+         assertEquals(banana.getProfit(), -20.35);
+
      }
 
      @Test
