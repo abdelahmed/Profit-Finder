@@ -95,6 +95,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
          orange.changeSales(34);
          orange.changeSales(35);
          assertEquals(orange.getSales(), 35);
+         orange.changeSales(0);
+         assertEquals(orange.getSales(), 0);
+
+
+
 
      }
 
