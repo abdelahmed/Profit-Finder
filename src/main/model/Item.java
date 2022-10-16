@@ -5,13 +5,13 @@ public class Item {
     private String name;  // name of the item
     private double cost;  // total money spent to put this item on sale/ make the item
     private double price; // price of one of the item
-    private double sales; // total number of sales of this item
+    private int sales; // total number of sales of this item
 
     /*
      * EFFECTS: name of item is set to itemName, cost of item is set to totalCost,
      * price of item is set to itemPrice, sales of the item is set to totalSales.
      */
-    public Item(String itemName, double totalCost, double itemPrice, double totalSales) {
+    public Item(String itemName, double totalCost, double itemPrice, int totalSales) {
         this.name = itemName;
         this.cost = totalCost;
         this.price = itemPrice;
@@ -65,7 +65,7 @@ public class Item {
      * MODIFIES: this
      * EFFECTS: sales of Item is set to newSales
      */
-    public void changeSales(double newSales) {
+    public void changeSales(int newSales) {
         if (newSales >= 0) {
             sales = newSales;
         }

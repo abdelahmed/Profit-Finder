@@ -15,5 +15,5 @@ start a business, and I believe this app would be very helpful.
 - As a user, I want to be able to add an item to my list of items.
 - As a user, I want to be able to remove an item from my list of items.
 - As a user, I want to be able to view all details about an item _(cost, price, sales, profit)_.
-- As a user, I want to be able to change the cost, price, sales, and buys of an item.
+- As a user, I want to be able to change the cost, price, and sales of an item.
 - As a user, I want to be able to view my full list of items.
