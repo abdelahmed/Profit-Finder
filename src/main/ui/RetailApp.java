@@ -6,7 +6,7 @@ import model.ListOfItem;
 import java.util.Locale;
 import java.util.Scanner;
 
-// Retail application
+// Retail application, took inspiration from Cpsc 210 TellerApp
 public class RetailApp {
     private ListOfItem itemList;
     private Scanner input;
