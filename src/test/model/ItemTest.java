@@ -52,11 +52,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
          assertEquals(orange.getPrice(), 0);
          orange.changePrice(-1);
          assertEquals(orange.getPrice(), 0);
-
-
-
-
      }
+
      @Test
      public void testChangeCost() {
          orange.changeCost(5);
@@ -67,14 +64,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
          assertEquals(orange.getCost(), 0);
          orange.changeCost(-1);
          assertEquals(orange.getCost(), 0);
-
      }
 
      @Test
      public void testGetProfit() {
          assertEquals(orange.getProfit(), 25);
          assertEquals(banana.getProfit(), -20.35);
-
      }
 
      @Test
@@ -84,8 +79,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
          orange.changeName("banana");
          orange.changeName("pineapple");
          assertEquals(orange.getName(), "pineapple");
-
-
      }
 
      @Test
@@ -97,10 +90,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
          assertEquals(orange.getSales(), 35);
          orange.changeSales(0);
          assertEquals(orange.getSales(), 0);
-
-
-
-
+         orange.changeSales(-1);
+         assertEquals(orange.getSales(), 0);
      }
 
 
