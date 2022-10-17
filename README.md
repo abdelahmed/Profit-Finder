@@ -12,8 +12,8 @@ start a business, and I believe this app would be very helpful.
 ## User Stories
 
 **User Stories**:
-- As a user, I want to be able to multiple items to my list of items.
-- As a user, I want to be able to remove items from my list of items.
+- As a user, I want to be able to add multiple items to my list of items.
+- As a user, I want to be able to remove multiple items from my list of items.
 - As a user, I want to be able to view all details about an item _(cost, price, sales, profit)_.
 - As a user, I want to be able to change the cost, price, and sales of an item.
-- As a user, I want to be able to view a list of all items I have entered.
+- As a user, I want to be able to view a list of all of my items.
