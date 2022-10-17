@@ -45,7 +45,7 @@ public class RetailApp {
         System.out.println("\tv -> View your list of Items");
         System.out.println("\ta -> Add an Item");
         System.out.println("\tr -> Remove an Item");
-        System.out.println("\tm -> Modify an Item");
+        System.out.println("\tm -> Modify an Item/View Item Details");
         System.out.println("\tq -> Quit");
     }
 
@@ -115,7 +115,7 @@ public class RetailApp {
             int n = itemList.getItemNames().indexOf(itemName);
             itemList.getItemNames().remove(n);
             itemList.getListOfItems().remove(n);
-            System.out.println(itemName + " has been removed from your list of items:");
+            System.out.println(itemName + " has been removed from your list of items");
         } else {
             System.out.println("Sorry, your selection is invalid! Please try again");
         }
@@ -128,6 +128,7 @@ public class RetailApp {
         String itemName = input.next();
         if (itemList.getItemNames().contains(itemName)) {
             int n = itemList.getItemNames().indexOf(itemName);
+            displayItemDetails(n);
             displayAnalyzeOptions();
             String command = input.next();
             changeItem(command, n);
@@ -150,7 +151,7 @@ public class RetailApp {
             itemList.getListOfItems().get(n).changePrice(input.nextDouble());
             displayItemDetails(n);
         } else if (command.equals("cs")) {
-            System.out.println("Enter the new sales : ");
+            System.out.println("Enter the new sales: ");
             itemList.getListOfItems().get(n).changeSales(input.nextInt());
             displayItemDetails(n);
         } else {
