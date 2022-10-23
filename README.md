@@ -17,3 +17,5 @@ start a business, and I believe this app would be very helpful in managing it.
 - As a user, I want to be able to view all details about an item _(cost, price, sales, profit)_.
 - As a user, I want to be able to change the cost, price, and sales of an item.
 - As a user, I want to be able to view a list of all of my items.
+- As a user, I want to be able to save my list of items to a file.
+- As a user, I want to be able to load my list of items from a file.
