@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 // Represents an item having a name, cost ($), price ($), and sales ($)
 public class Item {
     private String name;  // name of the item
@@ -77,6 +80,16 @@ public class Item {
      */
     public void changeName(String newName) {
         name = newName;
+    }
+
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("cost", cost);
+        json.put("price", price);
+        json.put("sales", sales);
+        return json;
     }
 }
 

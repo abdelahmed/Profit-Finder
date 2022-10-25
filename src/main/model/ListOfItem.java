@@ -1,18 +1,23 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
 import java.util.ArrayList;
 
 // Represents a list of items having an item count and an arraylist containing items
 public class ListOfItem {
+    private String name;
     private final ArrayList<Item> items;  // list of items
     private int itemCount;  // number of items in the list of items
 
     /*
      * EFFECTS: itemCount is set to zero, items is set to an empty ArrayList
+     * name is set to inputted string
      */
-    public ListOfItem() {
+    public ListOfItem(String name) {
         itemCount = 0;
         items = new ArrayList<>();
+        this.name = name;
     }
 
     /*
@@ -44,12 +49,33 @@ public class ListOfItem {
         return nameList;
     }
 
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("items", itemsToJson());
+        return json;
+    }
+
     public ArrayList<Item> getListOfItems() {
         return items;
     }
 
     public int getItemCount() {
         return itemCount;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    private JSONArray itemsToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Item i : items) {
+            jsonArray.put(i.toJson());
+        }
+
+        return jsonArray;
     }
 }
 

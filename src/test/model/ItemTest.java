@@ -94,5 +94,4 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
          assertEquals(orange.getSales(), 0);
      }
 
-
  }

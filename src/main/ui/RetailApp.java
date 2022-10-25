@@ -2,17 +2,30 @@ package ui;
 
 import model.Item;
 import model.ListOfItem;
+import persistence.JsonWriter;
+import persistence.JsonReader;
+
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
 
 import java.util.Locale;
-import java.util.Scanner;
 
 // Retail application, took inspiration from Cpsc 210 TellerApp
 public class RetailApp {
+    private static final String JSON_STORE = "./data/workroom.json";
     private ListOfItem itemList;
     private Scanner input;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: runs the retail application
     public RetailApp() {
+        input = new Scanner(System.in);
+        itemList = new ListOfItem("Abdel's List of Items");
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runApp();
     }
 
@@ -46,13 +59,15 @@ public class RetailApp {
         System.out.println("\ta -> Add an Item");
         System.out.println("\tr -> Remove an Item");
         System.out.println("\tm -> Modify an Item/View Item Details");
+        System.out.println("\ts -> Save a List Of Items");
+        System.out.println("\tl -> Load a List Of Items");
         System.out.println("\tq -> Quit");
     }
 
     // MODIFIES: this
     // EFFECTS: initializes ListOfItems
     private void initialize() {
-        itemList = new ListOfItem();
+        itemList = new ListOfItem("Abdel's List of Item");
         input = new Scanner(System.in);
         input.useDelimiter("\n");
     }
@@ -68,6 +83,10 @@ public class RetailApp {
             viewItems();
         } else if (command.equals("m")) {
             modifyItem();
+        } else if (command.equals("s")) {
+            saveListOfItems();
+        } else if (command.equals("l")) {
+            loadListOfItems();
         } else {
             System.out.println("Sorry, your selection is invalid! Please try again");
         }
@@ -176,5 +195,27 @@ public class RetailApp {
         System.out.println("\tcc -> Change Item Cost");
         System.out.println("\tcp -> Change Item Price");
         System.out.println("\tcs -> Change Item Sales");
+    }
+
+    private void saveListOfItems() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(itemList);
+            jsonWriter.close();
+            System.out.println("Saved " + itemList.getName() + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadListOfItems() {
+        try {
+            itemList = jsonReader.read();
+            System.out.println("Loaded " + itemList.getName() + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 }
