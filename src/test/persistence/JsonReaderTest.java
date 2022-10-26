@@ -23,7 +23,7 @@ class JsonReaderTest extends JsonTest {
     }
 
     @Test
-    void testReaderEmptyWorkRoom() {
+    void testReaderEmptyListOfItem() {
         JsonReader reader = new JsonReader("./data/testReaderEmptyListOfItem.json");
         try {
             ListOfItem li = reader.read();
@@ -35,11 +35,11 @@ class JsonReaderTest extends JsonTest {
     }
 
     @Test
-    void testReaderGeneralWorkRoom() {
-        JsonReader reader = new JsonReader("./data/testReaderGeneralWorkroom.json");
+    void testReaderGeneralListOfItem() {
+        JsonReader reader = new JsonReader("./data/testReaderGeneralListOfItem.json");
         try {
             ListOfItem li = reader.read();
-            assertEquals("My work room", li.getName());
+            assertEquals("My List of Items", li.getName());
             List<Item> thingies = li.getListOfItems();
             assertEquals(2, thingies.size());
         } catch (IOException e) {
