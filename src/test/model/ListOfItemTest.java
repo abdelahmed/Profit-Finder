@@ -58,7 +58,7 @@ public class ListOfItemTest {
         testList1.removeItem(item1);
         assertEquals(testList1.getListOfItems().get(0), item3);
         testList1.removeItem(item3);
-        ListOfItem emptyTest = new ListOfItem();
+        ListOfItem emptyTest = new ListOfItem("pineapple");
         assertEquals(testList1.getListOfItems(), emptyTest.getListOfItems());
 
     }
