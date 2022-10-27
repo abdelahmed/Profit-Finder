@@ -1,0 +1,23 @@
+{
+    "name": "Abdel's List of Item",
+    "items": [
+        {
+            "cost": 5,
+            "price": 90,
+            "name": "apple",
+            "sales": 999
+        },
+        {
+            "cost": 45,
+            "price": 300,
+            "name": "banana",
+            "sales": 5000
+        },
+        {
+            "cost": 34,
+            "price": 33,
+            "name": "pineapple",
+            "sales": 33
+        }
+    ]
+}
