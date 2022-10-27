@@ -49,12 +49,6 @@ public class ListOfItem {
         return nameList;
     }
 
-    public JSONObject toJson() {
-        JSONObject json = new JSONObject();
-        json.put("name", name);
-        json.put("items", itemsToJson());
-        return json;
-    }
 
     public ArrayList<Item> getListOfItems() {
         return items;
@@ -68,6 +62,15 @@ public class ListOfItem {
         return name;
     }
 
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("items", itemsToJson());
+        return json;
+    }
+
+    // returns items in ListOfItems as JSON array
     private JSONArray itemsToJson() {
         JSONArray jsonArray = new JSONArray();
 

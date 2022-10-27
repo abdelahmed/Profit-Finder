@@ -2,22 +2,16 @@
     "name": "Abdel's List of Item",
     "items": [
         {
-            "cost": 5,
+            "cost": 77,
             "price": 90,
             "name": "apple",
-            "sales": 999
+            "sales": 900
         },
         {
-            "cost": 45,
-            "price": 300,
+            "cost": 78,
+            "price": 9,
             "name": "banana",
-            "sales": 5000
-        },
-        {
-            "cost": 34,
-            "price": 33,
-            "name": "pineapple",
-            "sales": 33
+            "sales": 99
         }
     ]
 }
