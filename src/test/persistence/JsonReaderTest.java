@@ -27,7 +27,7 @@ class JsonReaderTest extends JsonTest {
         JsonReader reader = new JsonReader("./data/testReaderEmptyListOfItem.json");
         try {
             ListOfItem li = reader.read();
-            assertEquals("My List Of Items", li.getName());
+            assertEquals("My List of Items", li.getName());
             assertEquals(0, li.getListOfItems().size());
         } catch (IOException e) {
             fail("Couldn't read from file");

@@ -1,0 +1,17 @@
+{
+  "name": "My List of Items",
+  "items": [
+    {
+      "cost": 2,
+      "price": 5,
+      "name": "apple",
+      "sales": 90
+    },
+    {
+      "cost": 3,
+      "price": 5,
+      "name": "banana",
+      "sales": 100
+    }
+  ]
+}
