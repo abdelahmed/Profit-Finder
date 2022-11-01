@@ -56,7 +56,7 @@ public class JsonReader {
         }
     }
 
-    // MODIFIES: wr
+    // MODIFIES: li
     // EFFECTS: parses thingy from JSON object and adds it to workroom
     private void addThingy(ListOfItem li, JSONObject jsonObject) {
         String name = jsonObject.getString("name");

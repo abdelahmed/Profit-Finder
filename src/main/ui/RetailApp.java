@@ -6,28 +6,68 @@ import persistence.JsonWriter;
 import persistence.JsonReader;
 
 
+import javax.swing.*;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import java.util.Locale;
 
 // Retail application, took inspiration from Cpsc 210 TellerApp
-public class RetailApp {
+public class RetailApp extends JFrame {
+
     private static final String JSON_STORE = "./data/workroom.json";
     private ListOfItem itemList;
     private Scanner input;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
+    private String itemLabels;
+
+    JMenuBar menuBar;
+    JMenu itemListMenu;
+    JLabel itemListTitle;
+
+
 
     // EFFECTS: runs the retail application
     public RetailApp() {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(500,500);
+        this.setTitle("Profit Finder");
+        this.setLocationRelativeTo(null);
+        this.setLayout(new FlowLayout());
+        this.getContentPane().setBackground(Color.lightGray);
+        itemList = new ListOfItem("List of Items");
+
+        // MENU
+        this.setJMenuBar(menuBar);
+        this.setVisible(true);
+        menuBar = new JMenuBar();
+        this.add(menuBar);
+
+        itemListMenu = new JMenu("My Items");
+        menuBar.add(itemListMenu);
+
+
+
+        // LABELS
+        itemListTitle = new JLabel();
+        itemListTitle.setText("YOUR LIST OF ITEMS:");
+        this.add(itemListTitle);
+
         input = new Scanner(System.in);
         itemList = new ListOfItem("Abdel's List of Items");
         jsonWriter = new JsonWriter(JSON_STORE);
         jsonReader = new JsonReader(JSON_STORE);
         runApp();
     }
+
 
     // MODIFIES: this
     // EFFECTS: processes user input
@@ -111,9 +151,10 @@ public class RetailApp {
                     itemPrice,
                     itemSales));
             System.out.println((itemName) + " has been added to your list of Items:");
-
+            itemListMenu.add(itemName);
         }
     }
+
 
     // EFFECTS: displays names of all items in itemList
     private void viewItems() {
@@ -218,4 +259,5 @@ public class RetailApp {
             System.out.println("Unable to read from file: " + JSON_STORE);
         }
     }
+
 }

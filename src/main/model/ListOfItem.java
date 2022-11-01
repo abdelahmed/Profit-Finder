@@ -2,6 +2,8 @@ package model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.awt.*;
 import java.util.ArrayList;
 
 // Represents a list of items having an item count and an arraylist containing items
@@ -48,6 +50,7 @@ public class ListOfItem {
         }
         return nameList;
     }
+
 
 
     public ArrayList<Item> getListOfItems() {
