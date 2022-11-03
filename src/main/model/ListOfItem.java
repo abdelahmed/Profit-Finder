@@ -3,11 +3,12 @@ package model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
 // Represents a list of items having an item count and an arraylist containing items
-public class ListOfItem {
+public class ListOfItem extends JPanel {
     private String name;
     private final ArrayList<Item> items;  // list of items
     private int itemCount;  // number of items in the list of items
@@ -17,6 +18,13 @@ public class ListOfItem {
      * name is set to inputted string
      */
     public ListOfItem(String name) {
+        GridLayout layout = new GridLayout(10,1);
+        layout.setVgap(5);
+
+        this.setLayout(layout);
+        this.setBackground(Color.CYAN);
+        this.setVisible(true);
+
         itemCount = 0;
         items = new ArrayList<>();
         this.name = name;

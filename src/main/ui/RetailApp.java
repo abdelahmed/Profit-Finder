@@ -20,14 +20,13 @@ import java.util.Scanner;
 import java.util.Locale;
 
 // Retail application, took inspiration from Cpsc 210 TellerApp
-public class RetailApp extends JFrame {
+public class RetailApp {
 
     private static final String JSON_STORE = "./data/workroom.json";
     private ListOfItem itemList;
     private Scanner input;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
-    private String itemLabels;
 
     JMenuBar menuBar;
     JMenu itemListMenu;
@@ -37,29 +36,6 @@ public class RetailApp extends JFrame {
 
     // EFFECTS: runs the retail application
     public RetailApp() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500,500);
-        this.setTitle("Profit Finder");
-        this.setLocationRelativeTo(null);
-        this.setLayout(new FlowLayout());
-        this.getContentPane().setBackground(Color.lightGray);
-        itemList = new ListOfItem("List of Items");
-
-        // MENU
-        this.setJMenuBar(menuBar);
-        this.setVisible(true);
-        menuBar = new JMenuBar();
-        this.add(menuBar);
-
-        itemListMenu = new JMenu("My Items");
-        menuBar.add(itemListMenu);
-
-
-
-        // LABELS
-        itemListTitle = new JLabel();
-        itemListTitle.setText("YOUR LIST OF ITEMS:");
-        this.add(itemListTitle);
 
         input = new Scanner(System.in);
         itemList = new ListOfItem("Abdel's List of Items");

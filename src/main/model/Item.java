@@ -1,14 +1,21 @@
 package model;
 
 import org.json.JSONObject;
-import persistence.Writable;
+
+import javax.swing.*;
+import java.awt.*;
 
 // Represents an item having a name, cost ($), price ($), and sales ($)
-public class Item {
+public class Item extends JPanel {
+
     private String name;  // name of the item
     private double cost;  // total money spent to put this item on sale/ make the item
     private double price; // price of one of the item
     private int sales; // total number of sales of this item
+
+    private JLabel index;
+    private JLabel itemNameVisible;
+    private JButton details;
 
     /*
      * EFFECTS: name of item is set to itemName, cost of item is set to totalCost,
@@ -19,6 +26,38 @@ public class Item {
         this.cost = totalCost;
         this.price = itemPrice;
         this.sales = totalSales;
+
+        this.setPreferredSize(new Dimension(40,20));
+        this.setBackground(Color.blue);
+        this.setLayout(new BorderLayout());
+        this.setVisible(true);
+
+
+        details = new JButton("details");
+        details.setPreferredSize(new Dimension(60,20));
+        details.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        details.setBackground(Color.white);
+        this.add(details,BorderLayout.EAST);
+
+
+
+
+        index = new JLabel("");
+        index.setPreferredSize(new Dimension(40,20));
+        index.setHorizontalAlignment(JLabel.CENTER);
+        this.add(index,BorderLayout.WEST);
+
+        itemNameVisible = new JLabel(itemName);
+        itemNameVisible.setBorder(BorderFactory.createEmptyBorder());
+        itemNameVisible.setBackground(Color.red);
+
+        this.add(itemNameVisible,BorderLayout.CENTER);
+
+
+    }
+
+    public JButton getDetails() {
+        return details;
     }
 
     public String getName() {
