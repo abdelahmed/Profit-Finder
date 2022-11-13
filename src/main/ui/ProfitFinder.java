@@ -151,7 +151,7 @@ public class ProfitFinder extends JFrame {
             public void mousePressed(MouseEvent e) {
                 try {
                     list = jsonReader.read();
-                    JOptionPane.showMessageDialog(yes,"Loaded " + list.getName() + " from " + JSON_STORE + jsonReader.read().getListOfItems().size());
+                    JOptionPane.showMessageDialog(yes,"Loaded " + list.getName() + " from " + JSON_STORE);
                     addList(list);
 
                 } catch (IOException er) {
