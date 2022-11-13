@@ -6,13 +6,12 @@ import java.awt.*;
 public class Title extends JPanel {
     public Title() {
         this.setPreferredSize(new Dimension(500,50));
-        this.setBackground(Color.blue);
+        this.setBackground(Color.WHITE);
 
         JLabel titleText = new JLabel("Profit Finder");
-        titleText.setFont(new Font("Sans-serif", Font.BOLD,20));
+        titleText.setFont(new Font("Sans-serif", Font.BOLD,30));
         titleText.setHorizontalAlignment(JLabel.CENTER);
-        titleText.setPreferredSize(new Dimension(200,50));
-        titleText.setBackground(Color.red);
+        titleText.setPreferredSize(new Dimension(200,30));
 
         this.add(titleText);
         this.setVisible(true);

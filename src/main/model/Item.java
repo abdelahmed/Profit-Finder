@@ -28,7 +28,7 @@ public class Item extends JPanel {
         this.sales = totalSales;
 
         this.setPreferredSize(new Dimension(40,20));
-        this.setBackground(Color.blue);
+        this.setBackground(Color.white);
         this.setLayout(new BorderLayout());
         this.setVisible(true);
 
@@ -49,6 +49,7 @@ public class Item extends JPanel {
 
         itemNameVisible = new JLabel(itemName);
         itemNameVisible.setBorder(BorderFactory.createEmptyBorder());
+        itemNameVisible.setFont(new Font("Sans-serif", Font.BOLD,20));
         itemNameVisible.setBackground(Color.red);
 
         this.add(itemNameVisible,BorderLayout.CENTER);
@@ -89,6 +90,10 @@ public class Item extends JPanel {
         if (newPrice >= 0) {
             price = newPrice;
         }
+    }
+
+    public void addDetailsButton() {
+        this.add(details,BorderLayout.EAST);
     }
 
     /*

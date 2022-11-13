@@ -1,17 +1,23 @@
 {
-    "name": "Abdel's List of Item",
+    "name": "My List of Items",
     "items": [
         {
-            "cost": 77,
-            "price": 90,
+            "cost": 44,
+            "price": 55,
             "name": "apple",
-            "sales": 900
+            "sales": 4
         },
         {
-            "cost": 78,
-            "price": 9,
-            "name": "banana",
-            "sales": 99
+            "cost": 44,
+            "price": 5,
+            "name": "33",
+            "sales": 33
+        },
+        {
+            "cost": 440,
+            "price": 440,
+            "name": "eoepep",
+            "sales": 444444
         }
     ]
 }
