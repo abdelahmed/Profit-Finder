@@ -2,22 +2,22 @@
     "name": "My List of Items",
     "items": [
         {
-            "cost": 4.6,
-            "price": 7.6,
+            "cost": 5,
+            "price": 7,
             "name": "apple",
-            "sales": 5555
+            "sales": 40
         },
         {
-            "cost": 3.7,
-            "price": 8.9,
-            "name": "bbbbbb",
-            "sales": 90000
+            "cost": 7,
+            "price": 10,
+            "name": "banana",
+            "sales": 500
         },
         {
-            "cost": 5.666,
-            "price": 7.666,
-            "name": "Pineapple",
-            "sales": 999999
+            "cost": 3,
+            "price": 5,
+            "name": "pineapple",
+            "sales": 90
         }
     ]
 }
