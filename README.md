@@ -1,6 +1,6 @@
 # My Personal Project
 
-My project will be for any type of **business** that sells any asset. 
+This project will be for any type of **business** that sells any asset. 
 It will take in each inputted item by the user, it's price, and how expensive it is to 
 get one of it in stock. The user can then input the number of sales for that item
 and check how much profit they made. This will work with *any* type of business
