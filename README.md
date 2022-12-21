@@ -20,13 +20,3 @@ start a business, and I believe this app would be very helpful in managing it.
 - As a user, I want to be able to save my list of items to a file.
 - As a user, I want to be able to load my list of items from a file.
 
-# Instructions for Grader
-
-- You can generate the first required event related to adding Xs to a Y by pressing the "add item" button and filling 
-in the details about the item that you are prompted to enter, this will add an item to the panel of your list of items.
-- You can generate the second required event related to adding Xs to a Y by pressing the "details" button next to the
-item that you want to view the details of, this will show you the name, cost, sales, price, and profit of the item.
-- You can locate my visual component by pressing the details button next to an item. This will show an image of a dollar
-sign next to the details.
-- You can save the state of my application by pressing the "save" button.
-- You can reload the state of my application by pressing the "load" button.
