@@ -13,10 +13,10 @@ In order to run Profit Finder, you must have the following software installed on
 2. Navigate to the project directory in your terminal or command prompt.
 
 3. Run the following command to build the application:
-   mvn clean install
+- mvn clean install
 
 4. Run the following command to start the application:
-    java -jar target/profit-finder-1.0-SNAPSHOT.jar
+- java -jar target/profit-finder-1.0-SNAPSHOT.jar
 
 ## Usage
 Upon launching the application, you will see a window with a title bar, a list of items, and several buttons. Here's what each button does:
