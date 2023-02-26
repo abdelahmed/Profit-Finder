@@ -2,7 +2,7 @@
 Profit Finder is a simple Java desktop application for tracking the cost, price, and sales of items in order to calculate their profit. It allows the user to add items to a list, view the details of each item, and save/load the list to/from a JSON file.
 
 ## Getting Started
-###Prerequisites
+### Prerequisites
 In order to run Profit Finder, you must have the following software installed on your computer:
 
 - Java Development Kit (JDK) 8 or later
@@ -13,12 +13,10 @@ In order to run Profit Finder, you must have the following software installed on
 2. Navigate to the project directory in your terminal or command prompt.
 
 3. Run the following command to build the application:
-
-mvn clean install
+   mvn clean install
 
 4. Run the following command to start the application:
-
-java -jar target/profit-finder-1.0-SNAPSHOT.jar
+    java -jar target/profit-finder-1.0-SNAPSHOT.jar
 
 ## Usage
 Upon launching the application, you will see a window with a title bar, a list of items, and several buttons. Here's what each button does:
