@@ -1,4 +1,4 @@
-# My Personal Project
+# Profit Finder
 
 This project will be for any type of **business** that sells any asset. 
 It will take in each inputted item by the user, it's price, and how expensive it is to 
