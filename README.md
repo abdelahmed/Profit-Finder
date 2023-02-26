@@ -1,22 +1,30 @@
 # Profit Finder
+Profit Finder is a simple Java desktop application for tracking the cost, price, and sales of items in order to calculate their profit. It allows the user to add items to a list, view the details of each item, and save/load the list to/from a JSON file.
 
-This project will be for any type of **business** that sells any asset. 
-It will take in each inputted item by the user, it's price, and how expensive it is to 
-get one of it in stock. The user can then input the number of sales for that item
-and check how much profit they made. This works with *any* type of business
-(clothing, restaurant, etc.). There will also be a feature in which the app will make
-a list of all items, ranking them by total profit. This will help the user decide what
-to do with their business. It is of interest to me because in the future, I would like to
-start a business, and I believe this app would be very helpful in managing it.
+## Getting Started
+###Prerequisites
+In order to run Profit Finder, you must have the following software installed on your computer:
 
-## User Stories
+- Java Development Kit (JDK) 8 or later
+- Apache Maven 3.0 or later
+## Installation
+1. Clone this repository to your local machine.
 
-**User Stories**:
-- As a user, I want to be able to add multiple items to my list of items.
-- As a user, I want to be able to remove multiple items from my list of items.
-- As a user, I want to be able to view all details about an item _(cost, price, sales, profit)_.
-- As a user, I want to be able to change the cost, price, and sales of an item.
-- As a user, I want to be able to view a list of all of my items.
-- As a user, I want to be able to save my list of items to a file.
-- As a user, I want to be able to load my list of items from a file.
+2. Navigate to the project directory in your terminal or command prompt.
 
+3. Run the following command to build the application:
+
+mvn clean install
+
+4. Run the following command to start the application:
+
+java -jar target/profit-finder-1.0-SNAPSHOT.jar
+
+## Usage
+Upon launching the application, you will see a window with a title bar, a list of items, and several buttons. Here's what each button does:
+
+- Add Item: Click this button to add a new item to the list. You will be prompted to enter the item's name, cost, price, and sales.
+- Save: Click this button to save the current list of items to a JSON file.
+- Load: Click this button to load a list of items from a JSON file.
+- Details: Click this button to view the details of the currently selected item.
+To calculate the profit of an item, the application uses the following formula:
